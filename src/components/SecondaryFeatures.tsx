@@ -4,40 +4,22 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Captura e Transcrição de Áudio',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Google Cloud Speech-to-Text',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Tradução para Libras',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'VLibras - Cross Platform App',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Armazenamento',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'AWS S3 para arquivos e PostgreSQL/MongoDB para dados',
     icon: DeviceClockIcon,
-  },
-  {
-    name: 'Profit from your network',
-    description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
-    icon: DeviceListIcon,
-  },
-  {
-    name: 'Encrypted and anonymized',
-    description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
-    icon: DeviceLockIcon,
-  },
-  {
-    name: 'Portfolio tracking',
-    description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
-    icon: DeviceChartIcon,
   },
 ]
 
@@ -196,11 +178,11 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            Tecnologias envolvidas
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+            Essas são as tecnologias que utilizaremos para trazer mais acessibilidade
+            e inclusão
           </p>
         </div>
         <ul

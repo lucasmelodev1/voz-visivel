@@ -171,7 +171,7 @@ function DeviceChartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
+      id="technologies"
       aria-label="Features for building a portfolio"
       className="py-20 sm:py-32"
     >

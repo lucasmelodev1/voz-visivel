@@ -11,6 +11,8 @@ export function NavLinks() {
   return [
     ['Depoimentos', '/#reviews'],
     ['Recursos', '/#features'],
+    ['Tecnologias', '/#technologies'],
+    ['Modelo de Negócio', '/#pricing']
   ].map(([label, href], index) => (
     <Link
       key={label}

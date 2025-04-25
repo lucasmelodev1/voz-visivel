@@ -223,66 +223,108 @@ export function Pricing() {
             id="pricing-title"
             className="text-3xl font-medium tracking-tight text-gray-900"
           >
-            Flat pricing, no management fees.
+            Modelo de Negócio
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Whether you’re one person trying to get ahead or a big firm trying
-            to take over the world, we’ve got a plan for you.
+            O modelo de negócio da nossa plataforma é baseado na cobrança
+            recorrente e por consumo, com público tanto B2B quanto B2C.
           </p>
         </div>
-
-        <div className="mt-8 flex justify-center">
-          <div className="relative">
-            <RadioGroup
-              value={activePeriod}
-              onChange={setActivePeriod}
-              className="grid grid-cols-2"
-            >
-              {['Monthly', 'Annually'].map((period) => (
-                <Radio
-                  key={period}
-                  value={period}
-                  className={clsx(
-                    'cursor-pointer border border-gray-300 px-[calc(--spacing(3)-1px)] py-[calc(--spacing(2)-1px)] text-sm text-gray-700 transition-colors hover:border-gray-400 focus:outline-2 focus:outline-offset-2',
-                    period === 'Monthly'
-                      ? 'rounded-l-lg'
-                      : '-ml-px rounded-r-lg',
-                  )}
-                >
-                  {period}
-                </Radio>
-              ))}
-            </RadioGroup>
-            <div
-              aria-hidden="true"
-              className={clsx(
-                'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-cyan-500 transition-all duration-300',
-                activePeriod === 'Monthly'
-                  ? '[clip-path:inset(0_50%_0_0)]'
-                  : '[clip-path:inset(0_0_0_calc(50%-1px))]',
-              )}
-            >
-              {['Monthly', 'Annually'].map((period) => (
-                <div
-                  key={period}
-                  className={clsx(
-                    'py-2 text-center text-sm font-semibold text-white',
-                    period === 'Annually' && '-ml-px',
-                  )}
-                >
-                  {period}
-                </div>
-              ))}
-            </div>
-          </div>
+        <Table />
+        <div className="mx-auto mt-4 w-full pt-4 text-center">
+          <p className="text-sm font-semibold text-gray-800">
+            Custos de Transcrição por Hora:
+          </p>
+          <p className="text-sm text-gray-600">US$ 0,016 por hora</p>
+          <p className="text-sm text-gray-600">
+            {' '}
+            R$ 0,016 × 5,68 = R$ 0,09088 por hora ou seja,{' '}
+          </p>
+          <p className="text-sm text-gray-600 font-semibold">~9 centavos por hora de áudio</p>
         </div>
-
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-3">
-          {plans.map((plan) => (
-            <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
-          ))}
+        <div className="mt-8 w-full max-w-7xl px-4 text-lg text-gray-800 lg:px-8 flex flex-col items-center">
+          <span className="font-semibold text-gray-800">Público-Alvo:</span>
+            <p>Ensino Médio, Técnico, Superior e Pós</p>
+            <p>Instituições de ensino e eventos educacionais</p>
+            <p>Universidades públicas e privadas</p>
+            <p>Escolas técnicas</p>
+            <p>Plataformas EAD</p>
+            <p>
+              Organizadores de congressos, simpósios e seminários acessíveis
+            </p>
         </div>
       </Container>
     </section>
+  )
+}
+
+function Table() {
+  return (
+    <div className="mt-8 flow-root">
+      <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <table className="min-w-full divide-y divide-gray-300">
+            <thead>
+              <tr className="divide-x divide-gray-200">
+                <th
+                  scope="col"
+                  className="py-3.5 pr-4 pl-4 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                >
+                  Segmento
+                </th>
+                <th
+                  scope="col"
+                  className="px-4 py-3.5 text-left text-sm font-semibold text-gray-900"
+                >
+                  Proposta de Valor
+                </th>
+                <th
+                  scope="col"
+                  className="px-4 py-3.5 text-left text-sm font-semibold text-gray-900"
+                >
+                  Modelo de Receita
+                </th>
+                <th
+                  scope="col"
+                  className="py-3.5 pr-4 pl-4 text-left text-sm font-semibold text-gray-900 sm:pr-0"
+                >
+                  Observações técnicas
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              <tr className="divide-x divide-gray-200">
+                <td className="py-4 pr-4 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-0">
+                  B2B
+                </td>
+                <td className="p-4 text-sm whitespace-nowrap text-gray-500">
+                  Acesso gratuito com limites (ex: 2h/mês)
+                </td>
+                <td className="p-4 text-sm whitespace-nowrap text-gray-500">
+                  Freemium + Pagamento por uso
+                </td>
+                <td className="py-4 pr-4 pl-4 text-sm whitespace-nowrap text-gray-500 sm:pr-0">
+                  Cobrança via cartão ou Pix, via app
+                </td>
+              </tr>
+              <tr className="divide-x divide-gray-200">
+                <td className="py-4 pr-4 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-0">
+                  B2C
+                </td>
+                <td className="p-4 text-sm whitespace-nowrap text-gray-500">
+                  Licença institucional
+                </td>
+                <td className="p-4 text-sm whitespace-nowrap text-gray-500">
+                  Licenciamento anual ou por aluno/mês
+                </td>
+                <td className="py-4 pr-4 pl-4 text-sm whitespace-nowrap text-gray-500 sm:pr-0">
+                  Acesso personalizado com API/portal
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   )
 }

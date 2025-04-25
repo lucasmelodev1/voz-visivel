@@ -146,8 +146,8 @@ export function Hero() {
                 ['Ufersa', ufersaLogo],
                 ['Sabia', sabiaLogo],
               ].map(([name, logo, className]) => (
-                <li key={name} className={clsx('flex', className)}>
-                  <Image src={logo} alt={name} className="h-8 w-auto" unoptimized />
+                <li key={name.toString()} className={clsx('flex', className)}>
+                  <Image src={logo} alt={name.toString()} className="h-8 w-auto" unoptimized />
                 </li>
               ))}
             </ul>
